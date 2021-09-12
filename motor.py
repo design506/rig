@@ -31,15 +31,6 @@ except KeyboardInterrupt:
     GPIO.cleanup()
 
 
-
-
-
-
-
-
-
-
-
 """
 
 import RPi.GPIO as GPIO  

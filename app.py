@@ -58,10 +58,6 @@ GPIO.add_event_detect( Rain_pin, GPIO.FALLING,
         callback=rain_int, bouncetime=300)  
 
 
-
-
-
-
 app = Flask(__name__)
 
 
@@ -71,7 +67,6 @@ arduinoPort = "ARDUINO"                                              # Default p
 streamScript = "/home/pi/mjpg-streamer.sh"                           # Location of script used to start/stop video stream
 app.secret_key = os.environ.get("SECRET_KEY") or os.urandom(24)      # Secret key used for login session cookies
 ##########################################
-
 
 
 
@@ -111,8 +106,6 @@ def index():
 			selectedPort = index
 	
 	return render_template('index.html', relay_4_state=relay_4_state, portSelect=selectedPort,connected=arduinoActive)
-
-
 
 
 @app.route('/Temp_Humi')
@@ -209,7 +202,6 @@ def door_moc(distence): # 수동 문 여닫이
     return redirect(url_for('index')) 
             
 
-
 def gen(camera):
    while True:
        frame = camera.get_frame()
@@ -220,8 +212,6 @@ def gen(camera):
 def video_feed():
    return Response(gen(Camera()),
                    mimetype='multipart/x-mixed-replace; boundary=frame')
-
-
 
 
 @app.route('/login')
@@ -320,9 +310,6 @@ def settings():
 		return jsonify({'status': 'OK' })
 	else:
 		return jsonify({'status': 'Error','msg': 'Unable to read POST data'})
-
-
-
 
 
 
