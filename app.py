@@ -13,7 +13,8 @@ from gpiozero import Robot
 import time
 import Adafruit_DHT
 import datetime
-
+  
+  
 DHT_SENSOR = Adafruit_DHT.DHT22
 DHT_PIN = 4
 CloseLimit = 22 
